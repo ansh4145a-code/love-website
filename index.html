@@ -22,10 +22,20 @@
     <p>because, He is all yours</p>
 
     <div class="btn">
-      <a href="yes.html">Yes</a>
-      <a href="no1.html">No</a>
+      <a href="yes.html" onclick="trackClick('YES')">Yes</a>
+      <a href="no1.html" onclick="trackClick('NO')">No</a>
     </div>
   </div>
+  <script>
+function trackClick(choice) {
+  fetch("https://script.google.com/macros/s/AKfycbwrj0AwTDxT-WK7NtfrLo5jphFZkAHa66taUCvtxzIPoI0CLQbCL5sI8AaXY1MkQMzm/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      choice: choice
+    })
+  });
+}
+</script>
 </body>
 
 </html>
